@@ -3,153 +3,223 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
-    background-color: white;
-    color: grey;
-    line-height: 1.6;
+    background-color: whitesmoke;
+    color: dimgrey;
+    line-height: 1.7;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
     text-align: center;
 }
 
+
 .hero {
-    background: linear-gradient(135deg, navy 0%, navy 100%);
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
-    padding: 100px 0 80px 0;
+    padding: 140px 0 120px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.75) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .badge {
-    background-color: grey(255, 255, 255, 0.2);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    color: deepskyblue;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+    font-size: 3.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+    color: white;
 }
 
 .hero h2 {
     font-size: 1.8rem;
-    font-weight: 400;
-    opacity: 0.9;
-    margin-bottom: 25px;
+    font-weight: 500;
+    color: lightgray;
+    margin-bottom: 30px;
 }
 
 .hero p {
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto 40px auto;
-    font-size: 1.1rem;
-    opacity: 0.85;
+    font-size: 1.15rem;
+    color: lightgrey;
 }
 
 
-.btn-primary, .btn-large {
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
     display: inline-block;
-    background-color: orange;
+    background-color: deepskyblue;
     color: white;
     text-decoration: none;
-    padding: 14px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 4px 15px brown(255, 159, 67, 0.4);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0, 191, 255, 0.4);
 }
 
-.btn-primary:hover, .btn-large:hover {
-    background-color: orange;
+.btn-primary:hover {
+    background-color: dodgerblue;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 144, 255, 0.6);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
     transform: translateY(-2px);
 }
 
 .btn-large {
-    font-size: 1.3rem;
-    padding: 18px 45px;
-    background-color: green;
-    box-shadow: 0 4px 15px rgba(16, 172, 132, 0.4);
-}
-
-.btn-large:hover {
-    background-color: green;
+    font-size: 1.1rem;
+    padding: 16px 40px;
 }
 
 
 .details {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
 }
 
 .card {
     background: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    padding: 48px 36px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid lightgray;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: left;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: slategrey;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: inline-block;
 }
 
 .card h3 {
     color: navy;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
+    margin-bottom: 14px;
+    font-size: 1.35rem;
+    font-weight: 700;
 }
 
 .card p {
-    color: grey;
-    font-size: 0.95rem;
+    color: slategrey;
+    font-size: 1rem;
 }
 
 
 .cta-section {
     background-color: white;
-    padding: 80px 0;
-    border-top: 1px solid white;
+    padding: 100px 0;
+    border-top: 1px solid lightgray;
 }
 
 .cta-section h2 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     color: navy;
-    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
 }
 
 .cta-section p {
-    color: grey;
-    font-size: 1.1rem;
-    margin-bottom: 35px;
+    color: dimgrey;
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
 }
 
 .footer-note {
-    margin-top: 60px !important;
+    margin-top: 80px !important;
     font-size: 0.85rem !important;
-    color: grey !important;
+    color: slategrey !important;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
+
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
+    .hero { padding: 100px 0 80px 0; }
+    .hero h1 { font-size: 2.6rem; }
     .hero h2 { font-size: 1.4rem; }
     .grid { grid-template-columns: 1fr; }
+    .card { padding: 36px 24px; }
+    .cta-section h2 { font-size: 2rem; }
 }
